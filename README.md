@@ -1,5 +1,4 @@
-# kw-flink-cluster-docker
-## Keyed Watermarks: A Partition-aware Watermark Generation in Apache Flink
+# Keyed Watermarks: A Partition-aware Watermark Generation in Apache Flink
 ### Keyed Watermarks in Apache Flink Cluster Deployment using Docker
 
 The repository is structured as follows:

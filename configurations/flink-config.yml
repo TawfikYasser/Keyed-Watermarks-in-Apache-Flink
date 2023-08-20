@@ -1,0 +1,23 @@
+### JobManager
+
+jobmanager.rpc.address: <ip-of-docker-containing-jobmanager>
+jobmanager.bind-host: 0.0.0.0
+jobmanager.memory.process.size: <RAM-in-mb>
+taskmanager.bind-host: 0.0.0.0
+#taskmanager.host: localhost (To be commented)
+taskmanager.memory.process.size: <RAM-in-mb>
+taskmanager.numberOfTaskSlots: <number-of-task-slots>
+parallelism.default: <parallelism>
+rest.address: localhost
+
+### TaskManagers
+
+jobmanager.rpc.address: <ip-of-docker-containing-jobmanager>
+jobmanager.bind-host: 0.0.0.0
+jobmanager.memory.process.size: <RAM-in-mb>
+taskmanager.bind-host: 0.0.0.0
+#taskmanager.host: localhost (To be commented)
+taskmanager.memory.process.size: <RAM-in-mb>
+taskmanager.numberOfTaskSlots: <number-of-task-slots>
+parallelism.default: <parallelism>
+rest.address: localhost

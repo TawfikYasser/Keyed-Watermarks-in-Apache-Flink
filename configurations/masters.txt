@@ -1,0 +1,11 @@
+### JobManager
+here put the ip of the container maintaing the job manager followed by `:` then the port `8081`
+i.e. <IP>:<port>
+
+### TaskManager #1
+here put the ip of the container maintaing the job manager followed by `:` then the port `8081`
+i.e. <IP>:<port>
+
+### TaskManager #2
+here put the ip of the container maintaing the job manager followed by `:` then the port `8081`
+i.e. <IP>:<port>

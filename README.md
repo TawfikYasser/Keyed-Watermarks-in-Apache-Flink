@@ -12,7 +12,7 @@ Big Data Stream processing engines, exemplified by tools like Apache Flink, empl
 
 #### Set up an Apache Flink Cluster using [`Docker`](https://github.com/TawfikYasser/kw-flink-cluster-docker/blob/main/Dockerfile)
 * Clone this repo. using the following command: `git clone https://github.com/TawfikYasser/kw-flink-cluster-docker.git`.
-* Download the `build-target` folder from this [link](https://drive.google.com/drive/folders/1_gEHB0FxrvtpiAGlCqfd4GLXfACmn2As?usp=sharing) and put it in the same directory of the repo.
+* Download the `build-target` folder from this [`link`](https://drive.google.com/drive/folders/1_gEHB0FxrvtpiAGlCqfd4GLXfACmn2As?usp=sharing) and put it in the same directory of the repo.
 * Clone this repo. and in the same directory run the following command: `docker build -t <put-your-docker-image-name-here> .`, a docker image will be created.
 * Then we need to create 3 docker containers, one for the `JobManager`, and two for the `TaskManagers`.
    * To create the `JobManager` container run the following command: `docker run -it --name <put-your-docker-container-name-here> -p 8081:8081 --network bridge <put-your-docker-image-name-here>:latest`, we're exposing the 8081 port in order to be able to access the Apache Flink Web UI from outside the containers, also we're attaching the container to the `bridge` network.
@@ -20,7 +20,7 @@ Big Data Stream processing engines, exemplified by tools like Apache Flink, empl
 * Now, you have to configure the `masters`, `workers`, and `flink-config.yml` files on each container as follows:
    * [`masters file`](https://github.com/TawfikYasser/kw-flink-cluster-docker/blob/main/configurations/masters.txt)
    * [`workers file`](https://github.com/TawfikYasser/kw-flink-cluster-docker/blob/main/configurations/workers.txt)
-   * [`flink-config.yml file`]([https://github.com/TawfikYasser/kw-flink-cluster-docker/blob/main/configurations/masters.txt](https://github.com/TawfikYasser/kw-flink-cluster-docker/blob/main/configurations/flink-config.yml))
+   * [`flink-config.yml file`](https://github.com/TawfikYasser/kw-flink-cluster-docker/blob/main/configurations/flink-config.yml)
 * Start the containers, and start the `ssh` service on the containers of taskManagers using: `service ssh start`.
 #### Ready!
 * Now, you're ready to start the cluster, go to `/home/flink/bin/` inside the container containing the jobManager and run the cluster using: `./start-cluster.sh`.

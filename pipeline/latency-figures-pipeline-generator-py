@@ -1,0 +1,83 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import os
+import re
+
+dicdataset = {
+    "5global": r"5% of data globally delayed",
+    "20median": r"20% of the keys around the median are delayed",
+    "50global": r"50% of the data globally delayed",
+    "50median": r"50% of the keys around the median are delayed",
+    "20random": r"20% of randomly chosen keys are delayed",
+    "50random": r"50% of randomly chosen keys are delayed",
+    "debs": r"DEBS Dataset",
+    "ordered": r"Fully Ordered"
+}
+
+files = [
+    ('flink_ordered_2c_latency_ready.csv','keyed_ordered_2c_latency_ready.csv'),
+    ('flink_ordered_4c_latency_ready.csv','keyed_ordered_4c_latency_ready.csv'),
+    ('flink_ordered_8c_latency_ready.csv','keyed_ordered_8c_latency_ready.csv'),
+    ('flink_debs_2c_latency_ready.csv','keyed_debs_2c_latency_ready.csv'),
+    ('flink_debs_4c_latency_ready.csv','keyed_debs_4c_latency_ready.csv'),
+    ('flink_debs_8c_latency_ready.csv','keyed_debs_8c_latency_ready.csv'),
+    ('flink_5global_2c_latency_ready.csv','keyed_5global_2c_latency_ready.csv'),
+    ('flink_5global_4c_latency_ready.csv','keyed_5global_4c_latency_ready.csv'),
+    ('flink_5global_8c_latency_ready.csv','keyed_5global_8c_latency_ready.csv'),
+    ('flink_50random_2c_latency_ready.csv','keyed_50random_2c_latency_ready.csv'),
+    ('flink_50random_4c_latency_ready.csv','keyed_50random_4c_latency_ready.csv'),
+    ('flink_50random_8c_latency_ready.csv','keyed_50random_8c_latency_ready.csv'),
+    ('flink_50median_2c_latency_ready.csv','keyed_50median_2c_latency_ready.csv'),
+    ('flink_50median_4c_latency_ready.csv','keyed_50median_4c_latency_ready.csv'),
+    ('flink_50median_8c_latency_ready.csv','keyed_50median_8c_latency_ready.csv'),
+    ('flink_50global_2c_latency_ready.csv','keyed_50global_2c_latency_ready.csv'),
+    ('flink_50global_4c_latency_ready.csv','keyed_50global_4c_latency_ready.csv'),
+    ('flink_50global_8c_latency_ready.csv','keyed_50global_8c_latency_ready.csv'),
+    ('flink_20random_2c_latency_ready.csv','keyed_20random_2c_latency_ready.csv'),
+    ('flink_20random_4c_latency_ready.csv','keyed_20random_4c_latency_ready.csv'),
+    ('flink_20random_8c_latency_ready.csv','keyed_20random_8c_latency_ready.csv'),
+    ('flink_20median_2c_latency_ready.csv','keyed_20median_2c_latency_ready.csv'),
+    ('flink_20median_4c_latency_ready.csv','keyed_20median_4c_latency_ready.csv'),
+    ('flink_20median_8c_latency_ready.csv','keyed_20median_8c_latency_ready.csv')
+]
+
+for ex in files:
+    flinkFile = ex[0]
+    keyedFile = ex[1]
+    print(flinkFile)
+    print(keyedFile)
+    flink_df = pd.read_csv(flinkFile)
+    keyed_df = pd.read_csv(keyedFile)
+
+    # Create a single figure and axis
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    # Flink Latency
+    ax.plot(flink_df['Watermark'], flink_df['Latency'], label='Flink Latency', color='green')
+    
+    # Keyed Max Latency
+    ax.plot(keyed_df['Watermark'], keyed_df['MaxLatency'], label='Keyed Max. Latency', color='orange')
+
+    # Keyed Min Latency
+    ax.plot(keyed_df['Watermark'], keyed_df['MinLatency'], label='Keyed Min. Latency', color='blue')
+
+    # Set labels for the axes
+    ax.set_xlabel('Watermarks')
+    ax.set_ylabel('Latency in seconds')
+
+    # Add legend
+    ax.legend()
+
+    # Set tick parameters
+    ax.yaxis.set_tick_params(which='both', labelleft=True)
+
+    flinkFile = flinkFile.replace('_latency_ready.csv','').replace('flink_','').replace('_2c','').replace('_4c','').replace('_8c','')
+    p = re.findall(r'\d+c', keyedFile)[0][:-1]
+    # plt.suptitle(f'Latency Experiment (Flink Vs. Keyed) - Dataset: {dicdataset[flinkFile]} - Parallelism: {p}')
+
+    # # Display the plot (if needed)
+    # plt.show()
+
+    # Save the plot to a file (e.g., as PNG)
+    output_file = f"{flinkFile}_parallelism_{p}.png"
+    plt.savefig(output_file)

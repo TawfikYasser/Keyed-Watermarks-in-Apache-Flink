@@ -1,0 +1,17 @@
+### JobManager
+her put the ips of the containers mantaining the task managers splitted by new line.
+i.e.
+<ip-taskmanager1>
+<ip-taskmanager2>
+
+### TaskManager #1
+her put the ips of the containers mantaining the task managers splitted by new line.
+i.e.
+<ip-taskmanager1>
+<ip-taskmanager2>
+
+### TaskManager #2
+her put the ips of the containers mantaining the task managers splitted by new line.
+i.e.
+<ip-taskmanager1>
+<ip-taskmanager2>

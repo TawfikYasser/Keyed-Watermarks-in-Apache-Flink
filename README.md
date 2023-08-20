@@ -1,6 +1,8 @@
 # Keyed Watermarks: A Partition-aware Watermark Generation in Apache Flink
 ### Keyed Watermarks in Apache Flink Cluster Deployment using Docker
 
+![Vanilla Vs. Keyed WM](https://github.com/TawfikYasser/Keyed-Watermarks-in-Apache-Flink/blob/main/vanillavskeyedwm.png)
+
 The repository is structured as follows:
 * Explanation for the idea of Keyed Watermarks.
 * How to set up and run the cluster to be able to run Apache Flink with Keyed Watermarks.
@@ -8,6 +10,8 @@ The repository is structured as follows:
 
 #### What is `Keyed Watermarks` 
 Big Data Stream processing engines, exemplified by tools like Apache Flink, employ windowing techniques to manage unbounded streams of events. The aggregation of relevant data within Windows holds utmost importance for event-time windowing due to its impact on result accuracy. A pivotal role in this process is attributed to watermarks, unique timestamps signifying event progression in time. Nonetheless, the existing watermark generation method within Apache Flink, operating at the input stream level, exhibits a bias towards faster sub-streams, causing the omission of events from slower counterparts. Through our analysis, we determined that Apache Flink's standard watermark generation approach results in an approximate $33\%$ data loss when $50\%$ of median-proximate keys experience delays. Furthermore, this loss exceeds $37\%$ in cases where $50\%$ of randomly selected keys encounter delays. We introduce a pioneering approach termed keyed watermarks aimed at addressing data loss concerns and enhancing data processing precision to a minimum of $99\%$ in the majority of scenarios. Our strategy facilitates distinct progress monitoring through the creation of individualized watermarks for each logical sub-stream (key).
+
+![Experimental Setup](https://github.com/TawfikYasser/Keyed-Watermarks-in-Apache-Flink/blob/main/ExperimentalSetup.png)
 
 #### Set up an Apache Flink Cluster using [`Docker`](https://github.com/TawfikYasser/kw-flink-cluster-docker/blob/main/Dockerfile)
 * Clone this repo. using the following command: `git clone https://github.com/TawfikYasser/kw-flink-cluster-docker.git`.

@@ -33,6 +33,17 @@ Big Data Stream processing engines, exemplified by tools like Apache Flink, empl
 #### Flink Pipeline w/ `Keyed Watermarks`
 * In the following [`java`](https://github.com/TawfikYasser/kw-flink-cluster-docker/blob/main/pipeline/kw.java) file, use it as a starting point.
 
+#### Citation
+
+```
+@article{keyed-watermarks,
+  title={},
+  author={},
+  journal={},
+  year={}
+}
+```
+
 ---
 
 IMPORTANT: [`Code Base of Keyed Watermarks`](https://github.com/TawfikYasser/kw-flink-cluster-docker/tree/main/keyed-watermarks-code-base) & [`Ready to Run Flink Cluster`](https://drive.google.com/drive/folders/1_gEHB0FxrvtpiAGlCqfd4GLXfACmn2As)

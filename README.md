@@ -1,4 +1,4 @@
-# Keyed Watermarks: A Partition-aware Watermark Generation in Apache Flink
+# Keyed Watermarks: A Fine-grained Watermark Generation for Apache Flink
 ### Keyed Watermarks in Apache Flink Cluster Deployment using Docker
 
 ![Vanilla Vs. Keyed WM](https://github.com/TawfikYasser/Keyed-Watermarks-in-Apache-Flink/blob/main/vanillavskeyedwm.png)
@@ -43,7 +43,6 @@ Big Data Stream processing engines, exemplified by tools like Apache Flink, empl
   year={}
 }
 ```
-
 ---
 
 IMPORTANT: [`Code Base of Keyed Watermarks`](https://github.com/TawfikYasser/kw-flink-cluster-docker/tree/main/keyed-watermarks-code-base) & [`Ready to Run Flink Cluster`](https://drive.google.com/drive/folders/1_gEHB0FxrvtpiAGlCqfd4GLXfACmn2As)

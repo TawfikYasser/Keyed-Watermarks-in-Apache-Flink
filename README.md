@@ -36,12 +36,15 @@ Big Data Stream processing engines, exemplified by tools like Apache Flink, empl
 #### Citation
 
 ```
-@article{keyed-watermarks,
-  title={},
-  author={},
-  journal={},
-  year={}
-}
+@INPROCEEDINGS{10296717,
+  author={Yasser, Tawfik and Arafa, Tamer and El-Helw, Mohamed and Awad, Ahmed},
+  booktitle={2023 5th Novel Intelligent and Leading Emerging Sciences Conference (NILES)}, 
+  title={Keyed Watermarks: A Fine-grained Tracking of Event-time in Apache Flink}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={23-28},
+  doi={10.1109/NILES59815.2023.10296717}}
 ```
 ---
 

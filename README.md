@@ -58,27 +58,46 @@ Big Data Stream processing engines, exemplified by tools like Apache Flink, empl
 * Open the Web UI of Apache Flink using: `http://localhost:8081`.
   * (If you're running the containers on a VM use the VM's External IP, otherwise use your local machine's IP)
 
+#### Datasets
+* All datasets used are in this [link](https://drive.google.com/drive/folders/1F3ageBfsfOXqHKrk0H0ItqkJ4WJr_lQd?usp=sharing).
+
+#### Out Of Order Data Generator
+* Code could be found [here](https://drive.google.com/drive/folders/1Hkza13L3HfT8U7eVvLBOLnXrxN8r6Zhr?usp=sharing).
+
 #### Flink Pipeline w/ `Keyed Watermarks`
 * The pipeline code contains the flink java code to run the experiments of Accuracy, Latency, and State Size for all datasets.
 * All you need is to build the pipeline project and copy the `.jar` file into the JM container to use to run a flink job.
+* In the pipelines project you need to import the following jar files:
+  * flink-connector-files-1.17-SNAPSHOT.jar
+  * flink-dist_2.12-1.17-SNAPSHOT.jar
+  * flink-shaded-zookeeper-3-3.5.9-15.0.jar
+  * log4j-api-2.20.0
+  * log4j-core-2.20.0
 * **Accuracy Experiments:**
   1. You've built the flink source code and got the `build-target`.
-  2. Update the input and output paths in the pipeline code before building the the pipeline jar.
-  3. Next, build the pipeline code of the accuracy experiments, you can find it here.
-  4. Move the pipeline jar into the container, then run the flink job using: `./bin/flink run <jar-path-inside-the-container>`.
-  5. After running the job, 8 sub-jobs (for each dataset) will generate output files.
-  6. Finally, you can run the Python pipelines to generate the final results & graphs of accuracy.
+  2. Update the input and output paths in the pipeline code before building the pipeline jar.
+  3. Car IDs text files are [here](https://drive.google.com/drive/folders/1-Gi7heqdcBCpnIUfpq5LzAp84Jhf0dMJ?usp=sharing).
+  4. Next, build the pipeline code of the accuracy experiments, you can find it [here](https://drive.google.com/drive/folders/1E8FLGTRq88k9glyrR7bt9IsUKOzfQFPx?usp=sharing).
+  5. Move the pipeline jar into the container, then run the flink job using: `./bin/flink run <jar-path-inside-the-container>`.
+  6. After running the job, 8 sub-jobs (for each dataset) will generate output files.
+  7. Finally, you can run the Python pipelines to generate the final results & graphs of accuracy.
 * **Latency Experiments (Keyed):**
-  1. sd
-  2. You've built the flink source code and got the `build-target`.
-  3. Next, build the pipeline code of the accuracy experiments, you can find it here.
-  4. Move the pipeline jar into the container, then run the flink job using: `./bin/flink run <jar-path-inside-the-container> <dataset-path-inside-the-container> <output-path-inside-the-container>.`
+  1. Same steps as in Accuracy with some changes.
+  2. For Keyed we need to uncomment some lines in the class `KeyedTimestampsAndWatermarksOperator` to allow logging the start timestamp of watermark generation.
+  3. Also, we need to allow logging the end timestamp of watermark generation in the class `WindowOperator`.
+  4. Finally, re build the project, replace the new build-target with the existing one inside the containers and run the latency job pipeline.
+  5. `WindowOperator` class for Latency experiments could be found [here](https://drive.google.com/drive/folders/16_jsF-z_55_NvG187NLVj6KG8NwKItXm?usp=sharing).
 * **Latency Experiments (Non-keyed):**
-  1.
+  1. Same steps as in Accuracy with some changes.
+  2. For Keyed we need to uncomment some lines in the class `TimestampsAndWatermarksOperator` to allow logging the start timestamp of watermark generation.
+  3. Also, we need to allow logging the end timestamp of watermark generation in the class `WindowOperator`.
+  4. Finally, re build the project, replace the new build-target with the existing one inside the containers and run the latency job pipeline.
+  5. `WindowOperator` class for Latency experiments could be found [here](https://drive.google.com/drive/folders/16_jsF-z_55_NvG187NLVj6KG8NwKItXm?usp=sharing).
 * **State Size Experiments (Keyed):**
-  1.
-* **State Size Experiments (Non-keyed):**
-  1. 
+ 1. Same steps as in Accuracy with some changes.
+  3. We need to allow logging the state size in the class `WindowOperator`, replace the `WindowOperator` class with the attached one [here](https://drive.google.com/drive/folders/16_jsF-z_55_NvG187NLVj6KG8NwKItXm?usp=sharing). (Use the default `TimestampsAndWatermarksOperator` and `KeyedTimestampsAndWatermarksOperator` classes)
+  4. Finally, re build the project, replace the new build-target with the existing one inside the containers and run the latency job pipeline.
+
 #### Citation
 
 ```

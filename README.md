@@ -60,6 +60,8 @@ Big Data Stream processing engines, exemplified by tools like Apache Flink, empl
 
 #### Datasets
 * All datasets used are in this [link](https://drive.google.com/drive/folders/1F3ageBfsfOXqHKrk0H0ItqkJ4WJr_lQd?usp=sharing).
+* The main dataset used contains around 6M records.
+* The secondary dataset used contains around 49M records.
 
 #### Out Of Order Data Generator
 * Code could be found [here](https://drive.google.com/drive/folders/1Hkza13L3HfT8U7eVvLBOLnXrxN8r6Zhr?usp=sharing).

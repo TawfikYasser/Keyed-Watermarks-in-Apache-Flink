@@ -118,4 +118,4 @@ Big Data Stream processing engines, exemplified by tools like Apache Flink, empl
 IMPORTANT: [`Code Base of Keyed Watermarks`](https://github.com/TawfikYasser/kw-flink-cluster-docker/tree/main/keyed-watermarks-code-base) & [`Ready to Run Flink Cluster`](https://drive.google.com/drive/folders/1_gEHB0FxrvtpiAGlCqfd4GLXfACmn2As)
 
 ---
-Tawfik Yasser Contact Info.: [`LinkedIn`](https://www.linkedin.com/in/tawfikyasser/), [`Email`](mailto:tawfekyassertawfek@gmail.com), and [`Resume`]([https://drive.google.com/file/d/12KDxirYHipfH5bOuHgJtcBB6CmiHmqdM/view?usp=sharing](https://drive.google.com/file/d/1DuXrBTBNtxJ5P4YkhT1i0VEFTyKo2u6G/view?usp=sharing)).
+Tawfik Yasser Contact Info.: [`LinkedIn`](https://www.linkedin.com/in/tawfikyasser/), [`Email`](mailto:tawfekyassertawfek@gmail.com), and [`Resume`](https://drive.google.com/file/d/1DuXrBTBNtxJ5P4YkhT1i0VEFTyKo2u6G/view?usp=sharing).

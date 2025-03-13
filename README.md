@@ -103,6 +103,16 @@ Big Data Stream processing engines, exemplified by tools like Apache Flink, empl
 #### Citation
 
 ```
+@article{YASSER2025107796,
+title = {Keyed watermarks: A fine-grained watermark generation for Apache Flink},
+journal = {Future Generation Computer Systems},
+pages = {107796},
+year = {2025},
+issn = {0167-739X},
+doi = {https://doi.org/10.1016/j.future.2025.107796},
+url = {https://www.sciencedirect.com/science/article/pii/S0167739X25000913},
+author = {Tawfik Yasser and Tamer Arafa and Mohamed ElHelw and Ahmed Awad},
+keywords = {Keyed watermarks, Big data stream processing, Event-time tracking, Apache Flink},}
 @INPROCEEDINGS{10296717,
   author={Yasser, Tawfik and Arafa, Tamer and El-Helw, Mohamed and Awad, Ahmed},
   booktitle={2023 5th Novel Intelligent and Leading Emerging Sciences Conference (NILES)}, 
